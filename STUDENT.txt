@@ -1,0 +1,83 @@
+mysql> CREATE TABLE STUDENT_25 (Student_id int primary key,Name varchar(30),Age int,Department varchar(30),Marks int);
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> ALTER TABLE STUDENT_25 ADD Email varchar(30);
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE STUDENT_25 MODIFY MARKS FLOAT;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+mysql> ALTER TABLE STUDENT_25 RENAME COLUMN AGE TO Student_age;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DELETE from STUDENT_25 column email;
+
+mysql> ALTER TABLE STUDENT_25 DROP COlUMN email;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO STUDENT_25 VALUES('102','Rohan','18','BCA','98'),('105','Gopika','19','Physics','99'),('201','Ronith','18','Chemistry','88'),('225','Manoj','18','BBA','95'),('200','Arun','20','Bcom','45');
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM STUDENT_25;
++------------+--------+-------------+------------+-------+
+| Student_id | Name   | Student_age | Department | MARKS |
++------------+--------+-------------+------------+-------+
+|        102 | Rohan  |          18 | BCA        |    98 |
+|        105 | Gopika |          19 | Physics    |    99 |
+|        200 | Arun   |          20 | Bcom       |    45 |
+|        201 | Ronith |          18 | Chemistry  |    88 |
+|        225 | Manoj  |          18 | BBA        |    95 |
++------------+--------+-------------+------------+-------+
+5 rows in set (0.00 sec)
+
+
+mysql> SELECT * FROM STUDENT_25 WHERE MARKS>80;
++------------+--------+-------------+------------+-------+
+| Student_id | Name   | Student_age | Department | MARKS |
++------------+--------+-------------+------------+-------+
+|        102 | Rohan  |          18 | BCA        |    98 |
+|        105 | Gopika |          19 | Physics    |    99 |
+|        201 | Ronith |          18 | Chemistry  |    88 |
+|        225 | Manoj  |          18 | BBA        |    95 |
++------------+--------+-------------+------------+-------+
+4 rows in set (0.02 sec)
+
+mysql> SELECT name, marks from STUDENT_25;
++--------+-------+
+| name   | marks |
++--------+-------+
+| Rohan  |    98 |
+| Gopika |    99 |
+| Arun   |    45 |
+| Ronith |    88 |
+| Manoj  |    95 |
++--------+-------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT_25 ORDER BY MARKS DESC;
++------------+--------+-------------+------------+-------+
+| Student_id | Name   | Student_age | Department | MARKS |
++------------+--------+-------------+------------+-------+
+|        105 | Gopika |          19 | Physics    |    99 |
+|        102 | Rohan  |          18 | BCA        |    98 |
+|        225 | Manoj  |          18 | BBA        |    95 |
+|        201 | Ronith |          18 | Chemistry  |    88 |
+|        200 | Arun   |          20 | Bcom       |    45 |
++------------+--------+-------------+------------+-------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT_25 WHERE MARKS<50;
++------------+------+-------------+------------+-------+
+| Student_id | Name | Student_age | Department | MARKS |
++------------+------+-------------+------------+-------+
+|        200 | Arun |          20 | Bcom       |    45 |
++------------+------+-------------+------------+-------+
+1 row in set (0.00 sec)
+
+mysql>
