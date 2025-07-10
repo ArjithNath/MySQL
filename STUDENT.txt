@@ -80,4 +80,47 @@ mysql> SELECT * FROM STUDENT_25 WHERE MARKS<50;
 +------------+------+-------------+------------+-------+
 1 row in set (0.00 sec)
 
-mysql>
+
+mysql> select * from STUDENT_25;
++------------+--------+-------------+------------+-------+
+| Student_id | Name   | Student_age | Department | MARKS |
++------------+--------+-------------+------------+-------+
+|        102 | Rohan  |          18 | BCA        |    98 |
+|        105 | Gopika |          19 | Physics    |    99 |
+|        200 | Arun   |          20 | Bcom       |    45 |
+|        201 | Ronith |          18 | Chemistry  |    88 |
+|        225 | Manoj  |          18 | BBA        |    95 |
++------------+--------+-------------+------------+-------+
+5 rows in set (0.00 sec)
+
+
+mysql> INSERT INTO STUDENT_25 VALUES('301','Manohar','18','BBA','95');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from STUDENT_25;
++------------+---------+-------------+------------+-------+
+| Student_id | Name    | Student_age | Department | MARKS |
++------------+---------+-------------+------------+-------+
+|        102 | Rohan   |          18 | BCA        |    98 |
+|        105 | Gopika  |          19 | Physics    |    99 |
+|        200 | Arun    |          20 | Bcom       |    45 |
+|        201 | Ronith  |          18 | Chemistry  |    88 |
+|        225 | Manoj   |          18 | BBA        |    95 |
+|        301 | Manohar |          18 | BBA        |    95 |
++------------+---------+-------------+------------+-------+
+6 rows in set (0.00 sec)
+
+
+mysql> DELETE FROM STUDENT_25 WHERE department='BBA';
+Query OK, 2 rows affected (0.02 sec)
+
+mysql> select * from STUDENT_25;
++------------+--------+-------------+------------+-------+
+| Student_id | Name   | Student_age | Department | MARKS |
++------------+--------+-------------+------------+-------+
+|        102 | Rohan  |          18 | BCA        |    98 |
+|        105 | Gopika |          19 | Physics    |    99 |
+|        200 | Arun   |          20 | Bcom       |    45 |
+|        201 | Ronith |          18 | Chemistry  |    88 |
++------------+--------+-------------+------------+-------+
+4 rows in set (0.00 sec)
